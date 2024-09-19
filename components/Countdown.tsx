@@ -51,7 +51,7 @@ const useCountdown = (endDate: DateTime): CurrentPrevious => {
 const Countdown = (): ReactElement => {
   const isMounted = useIsMounted()
   const router = useRouter()
-  const defaultTime = useMemo(() => DateTime.local().plus({ days: 16, hours: 6, minutes: 12, seconds: 0 }), [])
+  const defaultTime = useMemo(() => DateTime.local().plus({ days: 16, hours: 6, minutes: 6, seconds: 0 }), [])
   const initialDate = router.query?.date ? DateTime.fromISO(Array.isArray(router.query.date) ? router.query.date[0] : router.query.date) : null
   const { current, previous } = useCountdown(
     initialDate?.isValid
